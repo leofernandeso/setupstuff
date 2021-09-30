@@ -2,6 +2,7 @@ set number
 set autoindent
 set hlsearch
 filetype plugin indent on
+syntax on
 " show existing tab with 4 spaces width
 set tabstop=4
 " when indenting with '>', use 4 spaces width
@@ -16,4 +17,3 @@ inoremap [ []<Esc>i
 " NERDTree config
 nmap <F6> :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
-let g:NERDTreeNodeDelimiter = "\u00a0"
