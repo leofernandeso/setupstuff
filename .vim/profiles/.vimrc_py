@@ -12,3 +12,7 @@ set backspace=indent,eol,start
 inoremap { {}<ESC>i
 inoremap ( ()<ESC>i
 inoremap [ []<ESC>i
+
+" NERDTree config
+nmap <F6> :NERDTreeToggle<CR>
+let NERDTreeShowHidden=1

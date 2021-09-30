@@ -9,6 +9,10 @@ set shiftwidth=4
 " On pressing tab, insert 4 spaces
 set expandtab
 set backspace=indent,eol,start
-inoremap { {}<Esc>i
+inoremap { {<CR>}<Esc>ko<Tab>
 inoremap ( ()<Esc>i
 inoremap [ []<Esc>i
+
+" NERDTree config
+nmap <F6> :NERDTreeToggle<CR>
+let NERDTreeShowHidden=1
