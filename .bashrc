@@ -118,5 +118,4 @@ fi
 source /opt/ros/noetic/setup.bash
 
 # vim aliases
-alias vc='vim -Nu ~/.vim/profiles/.vimrc_c'
-alias vpy='vim -Nu ~/.vim/profiles/.vimrc_py'
+alias v="nvim"

@@ -1,2 +1,2 @@
-cp -r ~/.vim .
-cp ~/.vimrc ~/.vim/profiles/
+cp ~/.bashrc .
+cp -r ~/.config/nvim/* ./.config/nvim
