@@ -7,7 +7,6 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'rbgrouleff/bclose.vim'
 Plug 'francoiscabrol/ranger.vim'
 Plug 'mariappan/dragvisuals.vim'
-Plug 'ntpeters/vim-better-whitespace'
 
 call plug#end()
 
@@ -31,10 +30,6 @@ set backspace=indent,eol,start
 " Debugger
 packadd termdebug
 let g:termdebug_wide=1
-
-"Line highlighting
-set cursorline
-hi CursorLine cterm=NONE ctermbg=darkgrey
 
 nnoremap <C-k> <cmd>vsplit<cr>
 nnoremap <C-q> gT
