@@ -63,6 +63,7 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
 static const char *termcmd[]  = { "terminator", NULL };
 static const char *chromecmd[]  = { "google-chrome", NULL };
 static const char *soundcontrolcmd[]  = { "pavucontrol", NULL };
+static const char *wifimanagercmd[]  = { "nmtui", NULL };
 
 #include "shiftview.c"
 static Key keys[] = {
@@ -70,6 +71,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_n,      spawn,          {.v = chromecmd } },
+    { MODKEY|ShiftMask,             XK_w,      spawn,          {.v = wifimanagercmd } },
 	{ MODKEY|ShiftMask,             XK_s,      spawn,          {.v = soundcontrolcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
