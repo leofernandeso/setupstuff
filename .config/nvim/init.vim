@@ -7,16 +7,21 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'rbgrouleff/bclose.vim'
 Plug 'francoiscabrol/ranger.vim'
 Plug 'mariappan/dragvisuals.vim'
+Plug 'ntpeters/vim-better-whitespace'
+Plug 'tpope/vim-surround'
+Plug 'davidhalter/jedi-vim'
 
 call plug#end()
 
 let g:ranger_map_keys = 0
+let g:jedi#popup_on_dot = 0
+let g:jedi#auto_initialization = 0
+
 map <leader>r :Ranger<CR>
 
 set background=dark
 
 set number
-set autoindent
 set hlsearch
 filetype plugin indent on
 " show existing tab with 4 spaces width
@@ -26,10 +31,16 @@ set shiftwidth=4
 " On pressing tab, insert 4 spaces
 set expandtab
 set backspace=indent,eol,start
+set clipboard=unnamedplus
+"set cursorcolumn
 
 " Debugger
 packadd termdebug
 let g:termdebug_wide=1
+
+"Line highlighting
+set cursorline
+hi CursorLine cterm=NONE ctermbg=darkgrey
 
 nnoremap <C-k> <cmd>vsplit<cr>
 nnoremap <C-q> gT
@@ -45,6 +56,9 @@ nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+
+nnoremap <C-Up> gT
+nnoremap <C-Down> gt
 
 " Using Lua functions
 nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
