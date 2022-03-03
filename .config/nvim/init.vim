@@ -9,13 +9,16 @@ Plug 'francoiscabrol/ranger.vim'
 Plug 'mariappan/dragvisuals.vim'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'tpope/vim-surround'
-Plug 'davidhalter/jedi-vim'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 call plug#end()
 
+let g:airline_theme='simple'
+let g:airline#extensions#tabline#formatter = 'default'
+let g:airline#extensions#tabline#enabled = 1
+
 let g:ranger_map_keys = 0
-let g:jedi#popup_on_dot = 0
-let g:jedi#auto_initialization = 0
 
 map <leader>r :Ranger<CR>
 
