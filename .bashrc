@@ -115,7 +115,37 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-source /opt/ros/noetic/setup.bash
 
 # vim aliases
-alias v="nvim"
+alias v="vim"
+
+# hide current path on terminal
+export PS1='$(basename $(pwd)):$ '
+
+# everest dependency manager
+PATH=$PATH:~/.local/bin
+CPM_SOURCE_CACHE=$HOME/.cache/CPM
+
+# xclip alias for copying in terminal
+alias xclip="xclip -selection c"
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/leonardo/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/leonardo/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/leonardo/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/leonardo/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+. "$HOME/.cargo/env"
+PATH=/home/leonardo/anaconda3/condabin:/home/leonardo/.cargo/bin:/home/leonardo/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/leonardo/.local/bin:/gcc-arm-none-eabi-10.3-2021.10/bin/:/home/leonardo/tum/embedded_systems_security/docker_img/deps/gcc-arm-none-eabi-10.3-2021.10/bin:/home/leonardo/tum/embedded_systems_security/docker_img/deps/gcc-arm-none-eabi-10.3-2021.10/bin
+CPM_SOURCE_CACHE=$HOME/.cache/CPM
+
+export TERM=screen-256color

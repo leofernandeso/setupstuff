@@ -29,6 +29,7 @@ let g:airline#extensions#tabline#enabled = 1
 let g:jedi#popup_on_dot = 0
 
 set number
+set background=dark
 set hlsearch
 " show existing tab with 4 spaces width
 set tabstop=4
