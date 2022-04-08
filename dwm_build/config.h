@@ -35,7 +35,7 @@ static const Rule rules[] = {
 /* layout(s) */
 static const float mfact     = 0.55; /* factor of master area size [0.05..0.95] */
 static const int nmaster     = 1;    /* number of clients in master area */
-static const int resizehints = 1;    /* 1 means respect size hints in tiled resizals */
+static const int resizehints = 0;    /* 1 means respect size hints in tiled resizals */
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
@@ -61,7 +61,8 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
 static const char *termcmd[]  = { "gnome-terminal", NULL };
 static const char *chromecmd[]  = { "google-chrome", NULL };
 static const char *soundcontrolcmd[]  = { "pavucontrol", NULL };
-static const char *wifimanagercmd[]  = { "nmtui", NULL };
+static const char *bluemanmanagercmd[]  = { "blueman-manager", NULL };
+static const char *slockcmd[]  = { "slock", NULL };
 
 #include "shiftview.c"
 static Key keys[] = {
@@ -69,8 +70,9 @@ static Key keys[] = {
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_n,      spawn,          {.v = chromecmd } },
-    { MODKEY|ShiftMask,             XK_w,      spawn,          {.v = wifimanagercmd } },
 	{ MODKEY|ShiftMask,             XK_s,      spawn,          {.v = soundcontrolcmd } },
+	{ MODKEY|ShiftMask,             XK_b,      spawn,          {.v = bluemanmanagercmd } },
+	{ MODKEY|ShiftMask,             XK_l,      spawn,          {.v = slockcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
