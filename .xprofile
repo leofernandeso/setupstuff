@@ -1,1 +1,8 @@
+# Set keyboard map
+setxkbmap -layout br -variant abnt2
+
+# Set HDMI configuration
 xrandr --output HDMI-1-1 --right-of eDP-1-1 --primary
+
+# Running status bar
+./statusbar/autostart.sh &
