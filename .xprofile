@@ -2,7 +2,19 @@
 setxkbmap -layout br -variant abnt2
 
 # Set HDMI configuration
-xrandr --output HDMI-1-1 --right-of eDP-1-1 --primary
+./.dwm/config_monitors.sh
 
 # Running status bar
-./statusbar/autostart.sh &
+./.dwm/dwm-bar/dwm_bar.sh &
+
+# Setting background image
+~/.fehbg &
+
+# Hides mouse when idle
+unclutter &
+
+# Notification server
+dunst &
+
+# Battery watcher
+.myprograms/critical_battery_notifier &

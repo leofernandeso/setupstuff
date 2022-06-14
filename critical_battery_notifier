@@ -1,0 +1,14 @@
+check_battery_level() {
+    while true
+    do
+        level=$(</sys/class/power_supply/BAT0/capacity);
+        status=$(</sys/class/power_supply/BAT0/status);
+        if [[ "$level" -le 20 && "$status" == "Discharging" ]]; then
+            echo "Notifying...";
+            notify-send --expire-time=10000 --urgency=CRITICAL "LOW BATTERY. PLUGIN CHARGER";
+        fi
+        sleep 60;
+    done
+}
+
+check_battery_level
