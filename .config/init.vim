@@ -1,40 +1,14 @@
-"" VIMPLUG Section
-call plug#begin("~/.vim/plugged")
-
-Plug 'tpope/vim-surround'
-Plug 'davidhalter/jedi-vim'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'edkolev/tmuxline.vim'
-
-call plug#end()
-
-"" VUNDLE section
-set nocompatible
-filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
-
-call vundle#begin()
-
-Bundle 'easymotion/vim-easymotion'
-
-call vundle#end()
-filetype plugin indent on
-""" Finished VUNDLE section
-
-let g:airline_theme='bubblegum'
-let g:airline#extensions#tabline#formatter = 'default'
-let g:airline#extensions#tabline#enabled = 1
-
-let g:jedi#popup_on_dot = 0
-
+set relativenumber
 set number
 set background=dark
 set hlsearch
+
 " show existing tab with 4 spaces width
 set tabstop=4
+
 " when indenting with '>', use 4 spaces width
 set shiftwidth=4
+
 " On pressing tab, insert 4 spaces
 set expandtab
 set backspace=indent,eol,start
