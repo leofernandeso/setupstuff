@@ -1,3 +1,5 @@
+set encoding=utf8
+set splitright
 set relativenumber
 set number
 set background=dark
@@ -48,3 +50,28 @@ noremap <M-6> 6gt
 noremap <M-7> 7gt
 noremap <M-8> 8gt
 noremap <M-9> 9gt
+
+"" Plugins installation
+
+call plug#begin()
+
+" Airline
+Plug 'https://github.com/vim-airline/vim-airline'
+
+" Tmux airline (status bar)
+Plug 'https://github.com/edkolev/tmuxline.vim'
+
+" Nerdtree (directory tree)
+Plug 'https://github.com/preservim/nerdtree'
+
+" Commentary helper
+Plug 'https://github.com/tpope/vim-commentary'
+
+call plug#end()
+
+
+"" Plugins config
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
