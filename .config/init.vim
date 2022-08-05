@@ -67,6 +67,9 @@ Plug 'https://github.com/preservim/nerdtree'
 " Commentary helper
 Plug 'https://github.com/tpope/vim-commentary'
 
+" Airline themes
+Plug 'vim-airline/vim-airline-themes'
+
 call plug#end()
 
 
@@ -75,3 +78,7 @@ nnoremap <leader>n :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
+
+let g:airline_theme='bubblegum'
+let g:airline#extensions#tabline#formatter = 'default'
+let g:airline#extensions#tabline#enabled = 1
