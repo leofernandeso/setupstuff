@@ -37,6 +37,15 @@ packer.startup(function()
   use "tpope/vim-commentary"
   use "edkolev/tmuxline.vim"
 
+  -- easymotion like plugin
+  use {
+    "phaazon/hop.nvim",
+    branch = 'v2',
+    config = function()
+      require'hop'.setup {}
+    end
+  }
+
 
   end
 )
