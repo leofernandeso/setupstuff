@@ -37,6 +37,17 @@ packer.startup(function()
   use "tpope/vim-commentary"
   use "edkolev/tmuxline.vim"
 
+--   -- completion plugins
+--   use "neovim/nvim-lspconfig"
+--   use "hrsh7th/cmp-path"
+--   use "hrsh7th/cmp-buffer"
+--   use "hrsh7th/cmp-cmdline"
+--   use "hrsh7th/cmp-nvim-lsp"
+--   use "hrsh7th/nvim-cmp"
+
+--   use "hrsh7th/cmp-vsnip"
+--   use "hrsh7th/vim-vsnip"
+
   -- easymotion like plugin
   use {
     "phaazon/hop.nvim",
@@ -49,3 +60,11 @@ packer.startup(function()
 
   end
 )
+
+-- -- -- vimplug plugins, that need to be installed via vimscript calls
+local Plug = vim.fn['plug#']
+vim.call('plug#begin', '~/.config/nvim/plugged')
+
+Plug('neoclide/coc.nvim', {branch = 'release'})
+
+vim.call('plug#end')

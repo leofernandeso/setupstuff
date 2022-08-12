@@ -13,6 +13,7 @@ local options = {
     termguicolors = true,               -- set term gui colors
     tabstop = 4,	                    -- inserts 4 spaces for each tab
     shiftwidth = 4,                     -- number of spaces in identation
+    pumheight = 25,                     -- maximum number of suggestions in snippet
 }
 
 local commands = {
