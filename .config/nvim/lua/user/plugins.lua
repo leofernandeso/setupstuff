@@ -36,6 +36,7 @@ packer.startup(function()
   use "vim-airline/vim-airline"
   use "tpope/vim-commentary"
   use "edkolev/tmuxline.vim"
+  use "preservim/nerdtree"
 
 --   -- completion plugins
 --   use "neovim/nvim-lspconfig"
