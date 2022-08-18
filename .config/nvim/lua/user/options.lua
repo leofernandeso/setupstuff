@@ -9,10 +9,12 @@ local options = {
     ignorecase = true,                  -- ignore case in search patterns
     hlsearch = true,                    -- highlights search results
     splitright = true,                  -- always generate vertical split to the right
+    autoindent = true,                  -- always generate vertical split to the right
+    smartindent = true,                  -- always generate vertical split to the right
     expandtab = true,                   -- converts tabs to spaces
     termguicolors = true,               -- set term gui colors
-    tabstop = 4,	                    -- inserts 4 spaces for each tab
-    shiftwidth = 4,                     -- number of spaces in identation
+    tabstop = 2,	                    -- inserts 4 spaces for each tab
+    shiftwidth = 2,	                    -- inserts 4 spaces for each tab
     pumheight = 25,                     -- maximum number of suggestions in snippet
 }
 

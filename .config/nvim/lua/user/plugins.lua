@@ -30,13 +30,16 @@ packer.startup(function()
   local use = use
 
   use "wbthomason/packer.nvim"
-  use "rstacruz/vim-closer"
   use "nvim-treesitter/nvim-treesitter"
+  use "jiangmiao/auto-pairs"
   use "rafi/awesome-vim-colorschemes"
   use "vim-airline/vim-airline"
   use "tpope/vim-commentary"
   use "edkolev/tmuxline.vim"
   use "preservim/nerdtree"
+  use {
+    "nvim-telescope/telescope.nvim", tag="0.1.0", requires={ {'nvim-lua/plenary.nvim'} }
+  }
 
 --   -- completion plugins
 --   use "neovim/nvim-lspconfig"
