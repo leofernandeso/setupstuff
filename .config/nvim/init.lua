@@ -6,3 +6,5 @@ require "user.keymaps.plugins.nerdtree"
 require "user.keymaps.plugins.telescope"
 require "user.plugins"
 require "user.completion"
+
+require("symbols-outline").setup()

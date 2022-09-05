@@ -37,6 +37,8 @@ packer.startup(function()
   use "tpope/vim-commentary"
   use "edkolev/tmuxline.vim"
   use "preservim/nerdtree"
+  use 'simrat39/symbols-outline.nvim'
+  use 'tpope/vim-fugitive'
   use {
     "nvim-telescope/telescope.nvim", tag="0.1.0", requires={ {'nvim-lua/plenary.nvim'} }
   }
