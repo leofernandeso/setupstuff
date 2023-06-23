@@ -1,5 +1,6 @@
 local opts = { noremap=true, silent = true }
 local term_opts = { silent = true }
+local task_opts = { noremap=true, silent = false }
 
 
 -- Shorten function name
@@ -27,8 +28,13 @@ keymap("n", "<M-Down>", ":resize +2<CR>", opts)
 keymap("n", "<M-Right>", ":vertical resize -2<CR>", opts)
 keymap("n", "<M-Left>", ":vertical resize +2<CR>", opts)
 
-
 -- Insert mode keymaps
 -- Tab switching
 keymap("i", "<M-q>", "<Esc>gT", opts)
 keymap("i", "<M-q>", "<Esc>gT", opts)
+
+-- Terminal commands
+-- Run build.sh
+keymap("n", "<M-b>", ":!./build.sh<CR>", opts)
+
+vim.keymap.set("n", "<Leader>pv", vim.cmd.Ex)
