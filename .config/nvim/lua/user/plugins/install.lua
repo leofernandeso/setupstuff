@@ -36,7 +36,13 @@ packer.startup(function()
   use "vim-airline/vim-airline"
   use "tpope/vim-commentary"
   use "edkolev/tmuxline.vim"
-  use "preservim/nerdtree"
+  use {
+    "preservim/nerdtree",
+    requires = {
+      {"Xuyuanp/nerdtree-git-plugin"},
+      {"ryanoasis/vim-devicons"}
+    }
+  }
   use 'simrat39/symbols-outline.nvim'
   use 'tpope/vim-fugitive'
   use {
