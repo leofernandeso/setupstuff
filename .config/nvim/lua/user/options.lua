@@ -20,7 +20,7 @@ local options = {
 
 local commands = {
     "hi CursorLine cterm=NONE ctermbg=darkgrey",
-    "colorscheme onedark"
+    "colorscheme OceanicNext"
 }
 
 for k, v in pairs(options) do

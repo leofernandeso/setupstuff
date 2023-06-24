@@ -39,21 +39,9 @@ packer.startup(function()
   use "preservim/nerdtree"
   use 'simrat39/symbols-outline.nvim'
   use 'tpope/vim-fugitive'
-  use 'github/copilot.vim'
   use {
     "nvim-telescope/telescope.nvim", tag="0.1.0", requires={ {'nvim-lua/plenary.nvim'} }
   }
-
---   -- completion plugins
---   use "neovim/nvim-lspconfig"
---   use "hrsh7th/cmp-path"
---   use "hrsh7th/cmp-buffer"
---   use "hrsh7th/cmp-cmdline"
---   use "hrsh7th/cmp-nvim-lsp"
---   use "hrsh7th/nvim-cmp"
-
---   use "hrsh7th/cmp-vsnip"
---   use "hrsh7th/vim-vsnip"
 
   -- easymotion like plugin
   use {
@@ -64,14 +52,49 @@ packer.startup(function()
     end
   }
 
+  -- undotree
+  use {
+    "mbbill/undotree",
+  }
 
-  end
+
+  use {
+	  'VonHeikemen/lsp-zero.nvim',
+	  branch = 'v1.x',
+	  requires = {
+		  -- LSP Support
+		  {'neovim/nvim-lspconfig'},
+		  {'williamboman/mason.nvim'},
+		  {'williamboman/mason-lspconfig.nvim'},
+
+		  -- Autocompletion
+		  {'hrsh7th/nvim-cmp'},
+		  {'hrsh7th/cmp-buffer'},
+		  {'hrsh7th/cmp-path'},
+		  {'saadparwaiz1/cmp_luasnip'},
+		  {'hrsh7th/cmp-nvim-lsp'},
+		  {'hrsh7th/cmp-nvim-lua'},
+
+		  -- Snippets
+		  {'L3MON4D3/LuaSnip'},
+		  {'rafamadriz/friendly-snippets'},
+	  }
+  }
+
+  -- copilot
+  use 'github/copilot.vim'
+
+  -- pretty bars
+  use 'nvim-tree/nvim-web-devicons' -- OPTIONAL: for file icons
+  use 'romgrk/barbar.nvim'
+
+  -- gitsigns
+  use {
+    'lewis6991/gitsigns.nvim',
+    requires = {
+      'nvim-lua/plenary.nvim'
+    }
+  }
+
+end
 )
-
--- -- -- vimplug plugins, that need to be installed via vimscript calls
-local Plug = vim.fn['plug#']
-vim.call('plug#begin', '~/.config/nvim/plugged')
-
-Plug('neoclide/coc.nvim', {branch = 'release'})
-
-vim.call('plug#end')
