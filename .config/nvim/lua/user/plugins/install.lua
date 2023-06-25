@@ -3,9 +3,9 @@ local execute = vim.api.nvim_command
 local fn = vim.fn
 
 -- Bootstraping packer if needed
-local install_path = fn.stdpath('data')..'/site/pack/packer/opt/packer.nvim'
+local install_path = fn.stdpath('data') .. '/site/pack/packer/opt/packer.nvim'
 if fn.empty(fn.glob(install_path)) > 0 then
-    execute('!git clone https://github.com/wbthomason/packer.nvim '..install_path)
+  execute('!git clone https://github.com/wbthomason/packer.nvim ' .. install_path)
 end
 vim.cmd [[packadd packer.nvim]]
 
@@ -32,21 +32,25 @@ packer.startup(function()
   use "wbthomason/packer.nvim"
   use "nvim-treesitter/nvim-treesitter"
   use "jiangmiao/auto-pairs"
-  use "rafi/awesome-vim-colorschemes"
   use "vim-airline/vim-airline"
+  use "rafi/awesome-vim-colorschemes"
+  use {
+    'nvim-lualine/lualine.nvim',
+    requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+  }
   use "tpope/vim-commentary"
   use "edkolev/tmuxline.vim"
   use {
     "preservim/nerdtree",
     requires = {
-      {"Xuyuanp/nerdtree-git-plugin"},
-      {"ryanoasis/vim-devicons"}
+      { "Xuyuanp/nerdtree-git-plugin" },
+      { "ryanoasis/vim-devicons" }
     }
   }
   use 'simrat39/symbols-outline.nvim'
   use 'tpope/vim-fugitive'
   use {
-    "nvim-telescope/telescope.nvim", tag="0.1.0", requires={ {'nvim-lua/plenary.nvim'} }
+    "nvim-telescope/telescope.nvim", tag = "0.1.0", requires = { { 'nvim-lua/plenary.nvim' } }
   }
 
   -- easymotion like plugin
@@ -54,7 +58,7 @@ packer.startup(function()
     "phaazon/hop.nvim",
     branch = 'v2',
     config = function()
-      require'hop'.setup {}
+      require 'hop'.setup {}
     end
   }
 
@@ -65,34 +69,33 @@ packer.startup(function()
 
 
   use {
-	  'VonHeikemen/lsp-zero.nvim',
-	  branch = 'v1.x',
-	  requires = {
-		  -- LSP Support
-		  {'neovim/nvim-lspconfig'},
-		  {'williamboman/mason.nvim'},
-		  {'williamboman/mason-lspconfig.nvim'},
+    'VonHeikemen/lsp-zero.nvim',
+    branch = 'v1.x',
+    requires = {
+      -- LSP Support
+      { 'neovim/nvim-lspconfig' },
+      { 'williamboman/mason.nvim' },
+      { 'williamboman/mason-lspconfig.nvim' },
 
-		  -- Autocompletion
-		  {'hrsh7th/nvim-cmp'},
-		  {'hrsh7th/cmp-buffer'},
-		  {'hrsh7th/cmp-path'},
-		  {'saadparwaiz1/cmp_luasnip'},
-		  {'hrsh7th/cmp-nvim-lsp'},
-		  {'hrsh7th/cmp-nvim-lua'},
+      -- Autocompletion
+      { 'hrsh7th/nvim-cmp' },
+      { 'hrsh7th/cmp-buffer' },
+      { 'hrsh7th/cmp-path' },
+      { 'saadparwaiz1/cmp_luasnip' },
+      { 'hrsh7th/cmp-nvim-lsp' },
+      { 'hrsh7th/cmp-nvim-lua' },
 
-		  -- Snippets
-		  {'L3MON4D3/LuaSnip'},
-		  {'rafamadriz/friendly-snippets'},
-	  }
+      -- Snippets
+      { 'L3MON4D3/LuaSnip' },
+      { 'rafamadriz/friendly-snippets' },
+    }
   }
 
   -- copilot
   use 'github/copilot.vim'
 
-  -- pretty bars
-  use 'nvim-tree/nvim-web-devicons' -- OPTIONAL: for file icons
-  use 'romgrk/barbar.nvim'
+  -- -- pretty bars
+  use 'akinsho/bufferline.nvim'
 
   -- gitsigns
   use {
@@ -101,6 +104,5 @@ packer.startup(function()
       'nvim-lua/plenary.nvim'
     }
   }
-
 end
 )
