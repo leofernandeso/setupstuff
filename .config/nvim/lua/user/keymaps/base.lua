@@ -1,6 +1,6 @@
-local opts = { noremap=true, silent = true }
+local opts = { noremap = true, silent = true }
 local term_opts = { silent = true }
-local task_opts = { noremap=true, silent = false }
+local task_opts = { noremap = true, silent = false }
 
 
 -- Shorten function name
@@ -36,5 +36,9 @@ keymap("i", "<M-q>", "<Esc>gT", opts)
 -- Terminal commands
 -- Run build.sh
 keymap("n", "<M-b>", ":!./build.sh<CR>", opts)
+
+-- Call :LspZeroFormat when F3
+keymap('n', '<F3>', ":LspZeroFormat<CR>", opts)
+
 
 vim.keymap.set("n", "<Leader>pv", vim.cmd.Ex)
