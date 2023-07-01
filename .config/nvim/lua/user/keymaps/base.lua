@@ -37,8 +37,4 @@ keymap("i", "<M-q>", "<Esc>gT", opts)
 -- Run build.sh
 keymap("n", "<M-b>", ":!./build.sh<CR>", opts)
 
--- Call :LspZeroFormat when F3
-keymap('n', '<F3>', ":LspZeroFormat<CR>", opts)
-
-
 vim.keymap.set("n", "<Leader>pv", vim.cmd.Ex)

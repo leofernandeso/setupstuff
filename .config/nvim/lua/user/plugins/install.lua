@@ -27,17 +27,15 @@ packer.init {
 
 --- startup and add configure plugins
 packer.startup(function()
-  local use = use
+
+  local use = use;
 
   use "wbthomason/packer.nvim"
   use "nvim-treesitter/nvim-treesitter"
-  use "jiangmiao/auto-pairs"
   use "vim-airline/vim-airline"
   use "rafi/awesome-vim-colorschemes"
-  use {
-    'nvim-lualine/lualine.nvim',
-    requires = { 'nvim-tree/nvim-web-devicons', opt = true }
-  }
+  use 'nvim-tree/nvim-web-devicons'
+  use 'nvim-lualine/lualine.nvim'
   use "tpope/vim-commentary"
   use "edkolev/tmuxline.vim"
   use {
@@ -68,28 +66,30 @@ packer.startup(function()
   }
 
 
-  use {
-    'VonHeikemen/lsp-zero.nvim',
-    branch = 'v1.x',
-    requires = {
-      -- LSP Support
-      { 'neovim/nvim-lspconfig' },
-      { 'williamboman/mason.nvim' },
-      { 'williamboman/mason-lspconfig.nvim' },
+  -- LSP
+  use { 'neovim/nvim-lspconfig' }
+  use { 'williamboman/mason.nvim' }
+  use { 'williamboman/mason-lspconfig.nvim' }
+  use { 'jose-elias-alvarez/null-ls.nvim' }
+  use { 'RRethy/vim-illuminate' }
 
-      -- Autocompletion
-      { 'hrsh7th/nvim-cmp' },
-      { 'hrsh7th/cmp-buffer' },
-      { 'hrsh7th/cmp-path' },
-      { 'saadparwaiz1/cmp_luasnip' },
-      { 'hrsh7th/cmp-nvim-lsp' },
-      { 'hrsh7th/cmp-nvim-lua' },
+  -- Autocompletion
+  use { 'hrsh7th/nvim-cmp' }
+  use { 'hrsh7th/cmp-buffer' }
+  use { 'hrsh7th/cmp-path' }
+  use { 'hrsh7th/cmp-nvim-lsp' }
+  use { 'hrsh7th/cmp-nvim-lua' }
+  use { 'L3MON4D3/LuaSnip' }
 
-      -- Snippets
-      { 'L3MON4D3/LuaSnip' },
-      { 'rafamadriz/friendly-snippets' },
-    }
-  }
+  -- Snippets
+  use { 'saadparwaiz1/cmp_luasnip' }
+  use { 'rafamadriz/friendly-snippets' }
+
+  -- Trouble
+  use { 'folke/trouble.nvim' }
+
+  -- Autopairs
+  use { 'windwp/nvim-autopairs' }
 
   -- copilot
   use 'github/copilot.vim'
