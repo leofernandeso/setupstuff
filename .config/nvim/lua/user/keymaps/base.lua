@@ -34,7 +34,10 @@ keymap("i", "<M-q>", "<Esc>gT", opts)
 keymap("i", "<M-q>", "<Esc>gT", opts)
 
 -- Terminal commands
+-- Run run.sh (current run task)
+keymap("n", "<M-r>", ":vsplit | term ./run.sh<CR>", opts)
+
 -- Run build.sh
-keymap("n", "<M-b>", ":!./build.sh<CR>", opts)
+keymap("n", "<M-b>", ":vsplit | term ./build.sh<CR>", opts)
 
 vim.keymap.set("n", "<Leader>pv", vim.cmd.Ex)

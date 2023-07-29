@@ -30,3 +30,10 @@ end
 for _, cmd in ipairs(commands) do
     vim.cmd(cmd)
 end
+
+-- Autocommands --
+-- always enter terminal in insert mode
+vim.cmd("autocmd TermOpen * startinsert")
+
+-- Don't start new line in comment mode
+vim.cmd("autocmd FileType * set formatoptions-=cro")
