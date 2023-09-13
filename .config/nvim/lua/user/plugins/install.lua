@@ -105,6 +105,30 @@ packer.startup(function()
 		},
 	})
 
+  -- debugging
+  use {
+    'mfussenegger/nvim-dap',
+  }
+  use {
+    "jay-babu/mason-nvim-dap.nvim",
+    opts = {
+      handlers = {},
+      ensure_installed = {
+        "codelldb"
+      }
+    }
+  }
+  use {
+    "rcarriga/nvim-dap-ui",
+    config = function()
+        local dap = require("dap")
+        local dapui = require("dapui")
+        dapui.setup()
+        dap.listeners.after.event_initialized["dapui_config"] = function() dapui.open() end
+        dap.listeners.before.event_terminated["dapui_config"] = function()  end
+    end
+  }
+
 	use({
 		"stevearc/overseer.nvim",
 		config = function()
