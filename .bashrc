@@ -116,36 +116,27 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# vim aliases
-alias v="vim"
+# custom cmake path
+export PATH=$PATH:/home/lf22son/software/cmake-3.28.0-rc5-linux-x86_64/bin
 
-# hide current path on terminal
-export PS1='$(basename $(pwd)):$ '
+# neovim
+alias v=/home/lf22son/software/neovim/nvim.appimage
 
-# everest dependency manager
-PATH=$PATH:~/.local/bin
-CPM_SOURCE_CACHE=$HOME/.cache/CPM
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
-# xclip alias for copying in terminal
-alias xclip="xclip -selection c"
+open_with_fzf() {
+  fd -t f -H -I | fzf -m --preview="xdg-mime query filetype {}" | xargs -ro -d "\n" xdg-open 2>&-
+}
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/leonardo/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/leonardo/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/leonardo/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/leonardo/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
+cd_with_fzf() {
+  cd $HOME && cd "$(fd -t d -H | fzf --preview="tree -L 1 {}" --bind="space:toggle-preview")"
+}
+
+alias fo=open_with_fzf
+alias fcd=cd_with_fzf
 
 . "$HOME/.cargo/env"
-PATH=/home/leonardo/anaconda3/condabin:/home/leonardo/.cargo/bin:/home/leonardo/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/leonardo/.local/bin:/gcc-arm-none-eabi-10.3-2021.10/bin/:/home/leonardo/tum/embedded_systems_security/docker_img/deps/gcc-arm-none-eabi-10.3-2021.10/bin:/home/leonardo/tum/embedded_systems_security/docker_img/deps/gcc-arm-none-eabi-10.3-2021.10/bin
-CPM_SOURCE_CACHE=$HOME/.cache/CPM
 
-export TERM=screen-256color
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
